@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Price Predictor</title>
+</head>
+<body>
+    <h1>Predict Property Price</h1>
+    <form action="/predict" method="post">
+        <label>Sale Year:</label><br>
+        <input type="number" name="SaleYear" required><br>
+
+        <label>Sale Month:</label><br>
+        <input type="number" name="SaleMonth" min="1" max="12" required><br>
+
+        <label>Routing Key:</label><br>
+        <input type="text" name="routing_key" required><br>
+
+        <input type="submit" value="Get Valuation">
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
